@@ -1,13 +1,13 @@
-package com.atguigu.wordcount
+package com.atguigu.ch03_window
 
 import org.apache.spark.SparkConf
-import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
 
-object StreamWordCount {
+object TestWindow {
   def main(args: Array[String]): Unit = {
     // 1. 创建 SparkConf对象, 并设置 App名字, 并设置为 local 模式
-    val sparkConf: SparkConf = new SparkConf().setAppName("StreamWordCount").setMaster("local[*]")
+    val sparkConf: SparkConf = new SparkConf().setAppName("TestWindow").setMaster("local[*]")
     sparkConf.set("spark.driver.bindAddress", "127.0.0.1")
 
     // 2.初始化SparkStreamingContext
@@ -20,7 +20,17 @@ object StreamWordCount {
 
     val wordAndOne: DStream[(String, Int)] = wordDStream.map((_, 1))
 
-    val wordAndCnt: DStream[(String, Int)] = wordAndOne.reduceByKey((_ + _))
+    // 窗口操作
+    // 不需要checkpoint
+    val wordAndCnt: DStream[(String, Int)] = wordAndOne.reduceByKeyAndWindow((x: Int, y: Int) => x + y, Seconds(10), Seconds(5))
+
+    // 减去旧窗口操作，适合重合的高的窗口
+    // 需要checkpoint
+    // 含有旧数据信息：(a, 0), (b, 0)
+    // ssc.checkpoint("./SparkStreaming/ck")
+    //  val wordAndCnt: DStream[(String, Int)] = wordAndOne.reduceByKeyAndWindow((x: Int, y: Int) => x + y,
+    //  (a: Int, b: Int) => a-b,
+    //  Seconds(10), Seconds(5))
 
     wordAndCnt.print()
 

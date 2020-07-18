@@ -1,4 +1,4 @@
-package com.atguigu.test
+package com.atguigu.ch01_test
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 

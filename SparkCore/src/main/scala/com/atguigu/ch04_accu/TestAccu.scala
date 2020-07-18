@@ -1,4 +1,4 @@
-package com.atguigu.accu
+package com.atguigu.ch04_accu
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}

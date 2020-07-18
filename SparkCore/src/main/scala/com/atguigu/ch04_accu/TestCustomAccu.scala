@@ -1,5 +1,6 @@
-package com.atguigu.accu
+package com.atguigu.ch04_accu
 
+import com.atguigu.ch04_accuaccu.CustomeAccu
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 

@@ -1,4 +1,4 @@
-package com.atguigu.udaf
+package com.atguigu.ch02_udaf
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 

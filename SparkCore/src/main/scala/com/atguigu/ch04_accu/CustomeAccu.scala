@@ -1,4 +1,4 @@
-package com.atguigu.accu
+package com.atguigu.ch04_accuaccu
 
 import org.apache.spark.util.AccumulatorV2
 

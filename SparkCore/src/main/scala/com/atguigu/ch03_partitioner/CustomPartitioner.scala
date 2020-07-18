@@ -1,4 +1,4 @@
-package com.atguigu.partitioner
+package com.atguigu.ch03_partitionerpartitioner
 
 import org.apache.spark.Partitioner
 

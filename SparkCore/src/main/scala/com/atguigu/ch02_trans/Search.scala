@@ -1,4 +1,4 @@
-package com.atguigu.trans
+package com.atguigu.ch02_trans
 
 import org.apache.spark.rdd.RDD
 

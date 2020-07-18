@@ -1,4 +1,4 @@
-package com.atguigu.partitioner
+package com.atguigu.ch03_partitioner
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.rdd.RDD

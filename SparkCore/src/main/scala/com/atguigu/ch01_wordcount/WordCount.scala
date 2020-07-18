@@ -1,4 +1,4 @@
-package com.atguigu.test
+package com.atguigu.ch01_wordcount
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}

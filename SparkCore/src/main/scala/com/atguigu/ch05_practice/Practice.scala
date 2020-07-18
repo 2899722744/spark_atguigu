@@ -1,4 +1,4 @@
-package com.atguigu.practice
+package com.atguigu.ch05_practice
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
